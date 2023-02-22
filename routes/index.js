@@ -8,4 +8,17 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'DWPCII-2023A', icon });
 });
 
+router.get('/author', (req, res)=>{
+  // Creating a View-Model
+  let author = {
+    "name": "Ivan",
+    "lastname": "Rivalcoba",
+    "twitter": "@rivalcoba",
+    "job": "ITGAM"
+  };
+  // Sending the view-model to be rendered by a View
+  res.render('author', author);
+
+});
+
 module.exports = router;
