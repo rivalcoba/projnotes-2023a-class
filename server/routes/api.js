@@ -7,10 +7,10 @@ var router = express.Router();
 router.get('/author', (req, res)=>{
   // Responding to the client using res object
   res.json({
-    "name": "Ivan",
-    "lastname": "Rivalcoba",
+    "name": "Jorge Ivan",
+    "lastname": "Rivalcoba Rivas",
     "twitter": "@rivalcoba",
-    "job": "ITGAM"
+    "job": "ITGAM 🏫"
   });
 }); // function(req, res){}
 

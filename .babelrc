@@ -1,0 +1,11 @@
+{
+  "presets" : [
+    [
+      "@babel/preset-env",{
+        // Los targets son las plataformas
+        // Donde se ejecutara el codigo final
+        "targets" : { "node" : "current" }
+      }
+    ]
+  ]
+}
