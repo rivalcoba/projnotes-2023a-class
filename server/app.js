@@ -10,9 +10,9 @@ import cookieParser from 'cookie-parser';
 import logger from 'morgan'
 
 // Importing subroutes
-import indexRouter from './routes/index' 
-import usersRouter from './routes/users';
-import apiRouter from './routes/api';
+import indexRouter from '@server/routes/index' 
+import usersRouter from '@server/routes/users';
+import apiRouter from '@server/routes/api';
 
 // We are creating the express instance
 const app = express();
