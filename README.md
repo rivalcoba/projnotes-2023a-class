@@ -20,3 +20,7 @@ This project will be developed using ECMAScript 6 (ES6) and run on a Node.js run
 4. Adding Babel
 
 5. Updating to ES6
+
+6. Build Script
+
+7. Babel plugins
