@@ -24,3 +24,5 @@ This project will be developed using ECMAScript 6 (ES6) and run on a Node.js run
 6. Build Script
 
 7. Babel plugins
+
+8. Adding a bundler
