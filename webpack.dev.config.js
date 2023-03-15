@@ -21,5 +21,16 @@ module.exports = {
     path: path.resolve(__dirname, "public"),
     // 2.2 Output file name
     filename: "bundle.js"
+  },
+  // 3. Configuring the development server
+  // The development server serves the packaged files
+  // to avoid having to repack on each code change.
+  devServer: {
+    // 3.1 Static files folder
+    static: path.join(__dirname, "public"),
+    // 3.2 Development server port
+    port: 8080,
+    // 3.3 Defining the host
+    host: "localhost"
   }
 }
