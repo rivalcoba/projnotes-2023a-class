@@ -32,5 +32,35 @@ module.exports = {
     port: 8080,
     // 3.3 Defining the host
     host: "localhost"
+  },
+  // Adding a module to webpack
+  module: {
+    rules: [
+      {
+        // This section stablishes 
+				// what rules to apply to ".js" files
+        test: /\\.js$/,
+        // We Dont want to transpile any kind of modules
+        exclude: /(node_modules|bower_components)/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                [
+                  '@babel/preset-env',
+                  {
+                    'modules': false,
+                    'useBuiltIns': 'usage',
+                    'targets': '> 0.25%, not dead',
+                    'corejs': 3
+                  }
+                ]
+              ]
+            }
+          }
+        ]
+      }
+    ]
   }
 }
