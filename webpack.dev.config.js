@@ -39,7 +39,7 @@ module.exports = {
       {
         // This section stablishes 
 				// what rules to apply to ".js" files
-        test: /\\.js$/,
+        test: /\.js$/,
         // We Dont want to transpile any kind of modules
         exclude: /(node_modules|bower_components)/,
         use: [
@@ -52,7 +52,7 @@ module.exports = {
                   {
                     'modules': false,
                     'useBuiltIns': 'usage',
-                    'targets': '> 0.25%, not dead',
+                    'targets': {"chrome": "80"},
                     'corejs': 3
                   }
                 ]
