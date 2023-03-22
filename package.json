@@ -10,7 +10,7 @@
     "builds": "npm run clean && babel ./server --out-dir dist --copy-files",
     "buildc": "npm run cleanc && webpack --config ./webpack.config.js --mode production",
     "clean": "rm -rf ./dist",
-    "cleanc": "rm -f ./public/bundle.js"
+    "cleanc": "rm -f ./public/bundle.js ./public/styles/app.css"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -32,6 +32,8 @@
     "babel-preset-minify": "^0.5.2",
     "babel-watch": "^7.7.2",
     "core-js": "^3.29.1",
+    "css-loader": "^6.7.3",
+    "mini-css-extract-plugin": "^2.7.5",
     "webpack": "^5.76.1",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.11.1"
