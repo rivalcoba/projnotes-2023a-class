@@ -7,8 +7,6 @@ const path = require('path');
 // Importing plugin
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-
-
 // We export a configuration object
 // that will be used by webpack
 module.exports = {

@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "PORT=3000 APP_URL='http://localhost' DEBUG=projnotes node ./dist/bin/www",
+    "start": "NODE_ENV=production PORT=3000 APP_URL='http://localhost' DEBUG=projnotes node ./dist/bin/www",
     "dev": "NODE_ENV=development PORT=3000 APP_URL='http://localhost' DEBUG=projnotes babel-watch --watch ./server/views ./server/bin/www",
     "devc": "NODE_ENV=development webpack serve --config ./webpack.dev.config.js --mode development",
     "build": "npm run buildc && npm run builds",
@@ -19,9 +19,7 @@
     "hbs": "^4.2.0",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
-    "supports-color": "^9.3.1",
-    "webpack-dev-middleware": "^4.2.0",
-    "webpack-hot-middleware": "^2.25.0"
+    "supports-color": "^9.3.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.21.0",
@@ -36,6 +34,8 @@
     "mini-css-extract-plugin": "^2.7.5",
     "webpack": "^5.76.1",
     "webpack-cli": "^5.0.1",
-    "webpack-dev-server": "^4.11.1"
+    "webpack-dev-middleware": "^6.0.2",
+    "webpack-dev-server": "^4.11.1",
+    "webpack-hot-middleware": "^2.25.3"
   }
 }
