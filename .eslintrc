@@ -1,8 +1,10 @@
 {
   "parser": "@babel/eslint-parser",
   "extends":["airbnb-base"],
+  "plugins": ["prettier"],
   "rules":{
-    "no-console":"off"
+    "no-console":"off",
+    "prettier/prettier": ["error"]
   },
   "env": {
     "es6": true,
