@@ -7,7 +7,7 @@ import path from 'path';
 // Helps to parse client cookies
 import cookieParser from 'cookie-parser';
 // Library to log http communication
-import logger from 'morgan';
+import morgan from 'morgan';
 
 // Importing subroutes
 import indexRouter from '@server/routes/index';
@@ -62,7 +62,7 @@ app.set('view engine', 'hbs');
 
 // Registering middlewares
 // Log all received requests
-app.use(logger('dev'));
+app.use(morgan('dev'));
 // Parse request data into json
 app.use(express.json());
 // Decode url info
