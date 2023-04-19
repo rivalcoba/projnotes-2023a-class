@@ -46,7 +46,7 @@ if (nodeEnviroment === 'development') {
   app.use(
     WebpackDevMiddleware(bundle, {
       publicPath: webpackConfig.output.publicPath,
-    })
+    }),
   );
   //  Enabling the webpack HMR
   app.use(WebpackHotMiddleware(bundle));
