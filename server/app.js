@@ -22,7 +22,8 @@ import WebpackHotMiddleware from 'webpack-hot-middleware';
 import webpackConfig from '../webpack.dev.config';
 
 // Creando variable del directorio raiz
-global["__rootdir"] = path.resolve(process.cwd());
+// eslint-disable-next-line
+global['__rootdir'] = path.resolve(process.cwd());
 
 // We are creating the express instance
 const app = express();
