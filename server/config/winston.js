@@ -46,7 +46,7 @@ const myFileFormat = combine(
   format.json(),
 );
 
-// Creando el objeto de opciones
+// Creando el objeto de opciones para cada transporte
 const options = {
   infoFile: {
     level: 'info',
