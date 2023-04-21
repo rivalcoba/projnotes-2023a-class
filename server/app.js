@@ -86,7 +86,7 @@ app.use('/api', apiRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
-  log.info('404 Pagina no encontrada')
+  log.info(`404 Pagina no encontrada ${req.method} ${req.originalUrl}`);
   next(createError(404));
 });
 

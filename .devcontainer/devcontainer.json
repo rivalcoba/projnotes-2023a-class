@@ -21,7 +21,8 @@
 			"meganrogge.template-string-converter",
 			"wayou.vscode-todo-highlight",
 			"usernamehw.errorlens",
-			"rangav.vscode-thunder-client"
+			"rangav.vscode-thunder-client",
+			"meganrogge.template-string-converter"
 		]
 	},
 
