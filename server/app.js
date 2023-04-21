@@ -21,6 +21,9 @@ import WebpackHotMiddleware from 'webpack-hot-middleware';
 // Importing webpack configuration
 import webpackConfig from '../webpack.dev.config';
 
+// Impornting winston logger
+import winston from './config/winston';
+
 // Creando variable del directorio raiz
 // eslint-disable-next-line
 global['__rootdir'] = path.resolve(process.cwd());
@@ -66,7 +69,7 @@ app.set('view engine', 'hbs');
 
 // Registering middlewares
 // Log all received requests
-app.use(morgan('dev'));
+app.use(morgan('combined', { stream: winston.stream }));
 // Parse request data into json
 app.use(express.json());
 // Decode url info

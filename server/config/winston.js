@@ -1,10 +1,15 @@
 // Importando el core de winston
 // y la función format de winston
 import winston, { format } from 'winston';
+import path from 'path';
 
 // Se desestructuran funciones para realizar la
 // composición del formato
 const { combine, timestamp, label, printf, colorize } = format;
+
+// Creando variable del directorio raiz
+// eslint-disable-next-line
+global['__rootdir'] = path.resolve(process.cwd());
 
 // Se define un esquema de colores
 // segun el grado de severidad
