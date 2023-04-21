@@ -22,7 +22,7 @@ import WebpackHotMiddleware from 'webpack-hot-middleware';
 import webpackConfig from '../webpack.dev.config';
 
 // Impornting winston logger
-import winston from './config/winston';
+import log from './config/winston';
 
 // Creando variable del directorio raiz
 // eslint-disable-next-line
@@ -69,7 +69,7 @@ app.set('view engine', 'hbs');
 
 // Registering middlewares
 // Log all received requests
-app.use(morgan('combined', { stream: winston.stream }));
+app.use(morgan('combined', { stream: log.stream }));
 // Parse request data into json
 app.use(express.json());
 // Decode url info
@@ -86,6 +86,7 @@ app.use('/api', apiRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
+  log.info('404 Pagina no encontrada')
   next(createError(404));
 });
 
