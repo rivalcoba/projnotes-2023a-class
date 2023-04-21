@@ -12,7 +12,8 @@
     "clean": "rm -rf ./dist",
     "cleanc": "rm -f ./public/bundle.js ./public/styles/app.css",
     "lint:c": "eslint ./client/**/*.js",
-    "lint:s": "eslint ./server/**/*.js"
+    "lint:s": "eslint ./server/**/*.js",
+    "clean:logs" : "rm -rf ./server/logs/*.log"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
