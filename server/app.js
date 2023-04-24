@@ -69,7 +69,7 @@ app.set('view engine', 'hbs');
 
 // Registering middlewares
 // Log all received requests
-app.use(morgan('combined', { stream: log.stream }));
+app.use(morgan('dev', { stream: log.stream }));
 // Parse request data into json
 app.use(express.json());
 // Decode url info
