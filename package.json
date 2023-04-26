@@ -13,7 +13,7 @@
     "cleanc": "rm -f ./public/bundle.js ./public/styles/app.css",
     "lint:c": "eslint ./client/**/*.js",
     "lint:s": "eslint ./server/**/*.js",
-    "clean:logs" : "rm -rf ./server/logs/*.log"
+    "clean:logs": "rm -rf ./server/logs/*.log"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -21,6 +21,7 @@
     "express": "^4.18.2",
     "hbs": "^4.2.0",
     "http-errors": "~1.6.3",
+    "materialize-css": "^1.0.0-rc.2",
     "morgan": "~1.9.1",
     "supports-color": "^9.3.1",
     "webpack": "^5.76.1",
