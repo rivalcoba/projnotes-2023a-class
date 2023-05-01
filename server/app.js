@@ -14,6 +14,9 @@ import indexRouter from '@server/routes/index';
 import usersRouter from '@server/routes/users';
 import apiRouter from '@server/routes/api';
 
+// Importing template-engine
+import configTemplateEngine from '@server/config/templateEngine';
+
 // Setting Webpack Modules
 import webpack from 'webpack';
 import WebpackDevMiddleware from 'webpack-dev-middleware';
@@ -61,11 +64,8 @@ if (nodeEnviroment === 'development') {
   console.log('🏭 Ejecutando en modo producción 🏭');
 }
 
-// view engine setup
-// We are delcaring the localization of the views
-app.set('views', path.join(__dirname, 'views'));
-// Setting up the template engine
-app.set('view engine', 'hbs');
+// Configuring the template engine
+configTemplateEngine(app);
 
 // Registering middlewares
 // Log all received requests
