@@ -9,11 +9,6 @@ import cookieParser from 'cookie-parser';
 // Library to log http communication
 import morgan from 'morgan';
 
-// Importing subroutes
-import indexRouter from '@server/routes/index';
-import usersRouter from '@server/routes/users';
-import apiRouter from '@server/routes/api';
-
 // Importing template-engine
 import configTemplateEngine from '@server/config/templateEngine';
 
@@ -26,6 +21,9 @@ import webpackConfig from '../webpack.dev.config';
 
 // Impornting winston logger
 import log from './config/winston';
+
+// Importando enrutador
+import router from './router';
 
 // Creando variable del directorio raiz
 // eslint-disable-next-line
@@ -80,9 +78,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 
 // Registering routes
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/api', apiRouter);
+router.addRoutes(app);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
