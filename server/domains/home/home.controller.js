@@ -7,9 +7,9 @@ const home = (req, res) => {
   res.render('home/homeView', { icon });
 };
 
-// GET "/index"
+// GET "/about"
 const about = (req, res) => {
-  res.send('⚠️ UNDER CONSTRUCTION: GET /about ⚠️');
+  res.render('home/aboutView', { appVersion: '1.0.0' });
 };
 
 // Controlador Home
