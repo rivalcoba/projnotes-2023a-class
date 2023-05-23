@@ -17,6 +17,10 @@ import log from '../config/winston';
 // Importing config Keys
 import configKeys from '../config/configKeys';
 
+// Importing ODM
+import MongooseOdm from '../services/odm';
+import MongooseOdm from '../services/odm';
+
 /**
  * Normalize a port into a number, string, or false.
  */
@@ -88,7 +92,25 @@ function onListening() {
  * Listen on provided port, on all network interfaces.
  */
 // Specifying the port where the server will be listening
+
+// Creando la instancia del ODM
+const mongooseOdm = new MongooseOdm(configKeys.mongoUrl);
+
+// Conectando a la base de datos
+try {
+  const dbConnection = await mongooseOdm.connect();
+  if(! dbConnection){
+
+  }else{
+    
+  }
+} catch (error) {
+  
+}
+
 server.listen(port);
+
+
 // Attaching Callbacks to events
 server.on('error', onError);
 server.on('listening', onListening);
