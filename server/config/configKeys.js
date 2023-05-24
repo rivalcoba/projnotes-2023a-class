@@ -10,6 +10,7 @@ dotenv.config();
 // Crearemos un objeto que contendra
 // las llaves de configuración
 export default {
+  appVersion: process.env.APP_VERSION,
   homeUrl: `${process.env.APP_URL}:${process.env.PORT}`,
   port: process.env.PORT || '3000',
   ip: process.env.IP,
