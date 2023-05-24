@@ -19,7 +19,6 @@ import configKeys from '../config/configKeys';
 
 // Importing ODM
 import MongooseOdm from '../services/odm';
-import MongooseOdm from '../services/odm';
 
 /**
  * Normalize a port into a number, string, or false.
@@ -96,20 +95,21 @@ function onListening() {
 // Creando la instancia del ODM
 const mongooseOdm = new MongooseOdm(configKeys.mongoUrl);
 
-// Conectando a la base de datos
-try {
-  const dbConnection = await mongooseOdm.connect();
-  if(! dbConnection){
-
-  }else{
-    
+(async () => {
+  // Conectando a la base de datos
+  try {
+    const dbConnection = await mongooseOdm.connect();
+    log.info(
+      `🛢️✅ Conexión exitosa a la base de datos: ${configKeys.mongoUrl} ✅🛢️`,
+    );
+    // Store the dbConnection in the app
+    app.set('dbConnection', dbConnection);
+    // Starting Server
+    server.listen(port);
+  } catch (error) {
+    log.error(`Error www.js ln 110: ${error.message}`);
   }
-} catch (error) {
-  
-}
-
-server.listen(port);
-
+})();
 
 // Attaching Callbacks to events
 server.on('error', onError);
