@@ -19,57 +19,57 @@ import configKeys from '../config/configKeys';
 // Importing ODM
 import MongooseOdm from '../services/odm';
 
-(async () => {
-  /**
-   * Normalize a port into a number, string, or false.
-   */
+/**
+ * Normalize a port into a number, string, or false.
+ */
 
-  function normalizePort(val) {
-    const port = parseInt(val, 10);
+function normalizePort(val) {
+  const port = parseInt(val, 10);
 
-    if (Number.isNaN(port)) {
-      // named pipe
-      return val;
-    }
-
-    if (port >= 0) {
-      // port number
-      return port;
-    }
-
-    return false;
+  if (Number.isNaN(port)) {
+    // named pipe
+    return val;
   }
 
-  /**
-   * Get port from environment and store in Express.
-   */
+  if (port >= 0) {
+    // port number
+    return port;
+  }
 
-  const port = normalizePort(configKeys.port);
+  return false;
+}
 
-  /**
-   * Event listener for HTTP server "error" event.
-   */
+/**
+ * Get port from environment and store in Express.
+ */
 
-  function onError(error) {
-    if (error.syscall !== 'listen') {
+const port = normalizePort(configKeys.port);
+
+/**
+ * Event listener for HTTP server "error" event.
+ */
+
+function onError(error) {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
+  const bind = typeof port === 'string' ? `Pipe ${port}` : `Port ${port}`;
+  // handle specific listen errors with friendly messages
+  switch (error.code) {
+    case 'EACCES':
+      log.error(`${bind} requires elevated privileges`);
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      log.error(`${bind} is already in use`);
+      process.exit(1);
+      break;
+    default:
       throw error;
-    }
-    const bind = typeof port === 'string' ? `Pipe ${port}` : `Port ${port}`;
-    // handle specific listen errors with friendly messages
-    switch (error.code) {
-      case 'EACCES':
-        log.error(`${bind} requires elevated privileges`);
-        process.exit(1);
-        break;
-      case 'EADDRINUSE':
-        log.error(`${bind} is already in use`);
-        process.exit(1);
-        break;
-      default:
-        throw error;
-    }
   }
+}
 
+(async () => {
   /**
    * Listen on provided port, on all network interfaces.
    */
