@@ -6,7 +6,7 @@ const showDashboard = (req, res) => {
 
 // GET "/project/add"
 const add = (req, res) => {
-  res.send('⚠️ UNDER CONSTRUCTION: GET /project ⚠️');
+  res.render('project/addView');
 };
 
 // Controlador user
