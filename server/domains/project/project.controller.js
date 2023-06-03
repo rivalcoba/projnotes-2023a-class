@@ -41,18 +41,16 @@ const addPost = async (req, res) => {
   // Se desestructura la información
   // de la peticion
   const { validData: project } = req;
-  // Creando la instancia de un documento
-  // con los valores de 'project'
-  const projectDocument = new ProjectModel(project);
   try {
-    // Se salva el documento en la colección correspondiente
-    const savedProject = await projectDocument.save();
+    // Creando la instancia de un documento
+    // con los valores de 'project'
+    const savedProject = await ProjectModel.create(project);
     // Se contesta la información del proyecto al cliente
     log.info('Se entrega al cliente información del proyecto cargado');
     return res.status(200).json(savedProject);
   } catch (error) {
     log.error(
-      'ln 56 project.controller: Error al guardar proyecto en la base de datos',
+      'ln 53 project.controller: Error al guardar proyecto en la base de datos',
     );
     return res.status(500).json(error);
   }
