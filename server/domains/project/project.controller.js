@@ -10,9 +10,10 @@ import ProjectModel from './project.model';
 // GET "/project"
 const showDashboard = async (req, res) => {
   // Consultado todos los proyectos
-  const projects = await ProjectModel.find({});
+  const projects = await ProjectModel.find({}).lean().exec();
   // Enviando los proyectos al cliente en JSON
-  res.status(200).json(projects);
+  log.info('Se entrega dashboard de proyectos');
+  res.render('project/dashboardView', { projects });
 };
 
 // GET "/project/add"
