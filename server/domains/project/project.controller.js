@@ -84,6 +84,11 @@ const edit = async (req, res) => {
   }
 };
 
+// PATCH "/project/edit/:id"
+const editPatch = (req, res) => {
+  res.status(200).send('Request attended: "/project/edit/:id"');
+};
+
 // Controlador user
 export default {
   // Action Methods
@@ -91,4 +96,5 @@ export default {
   add,
   addPost,
   edit,
+  editPatch,
 };
