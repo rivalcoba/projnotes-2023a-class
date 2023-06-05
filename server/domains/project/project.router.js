@@ -32,8 +32,8 @@ router.post(
 // GET "/project/edit/:id"
 router.get('/edit/:id', projectController.edit);
 
-// PATCH "/project/edit/:id"
-router.patch('/edit/:id', projectController.editPatch);
+// PUT "/project/edit/:id"
+router.put('/edit/:id', projectController.editPut);
 
 // Exporto este tramo de ruta
 export default router;

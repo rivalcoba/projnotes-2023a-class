@@ -2,6 +2,8 @@
 import createError from 'http-errors';
 // Import the Express Library
 import express from 'express';
+// Enable post and delete verbs
+import methodOverride from 'method-override';
 // Is a Core-Node library to manage system paths
 import path from 'path';
 // Helps to parse client cookies
@@ -77,6 +79,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 // Parse client cookies into json
 app.use(cookieParser());
+// Enable post and delete verbs
+app.use(methodOverride('_method'));
 // Set up the static file server
 app.use(express.static(path.join(__dirname, '../public')));
 

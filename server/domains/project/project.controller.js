@@ -84,8 +84,8 @@ const edit = async (req, res) => {
   }
 };
 
-// PATCH "/project/edit/:id"
-const editPatch = (req, res) => {
+// PUT "/project/edit/:id"
+const editPut = (req, res) => {
   res.status(200).send('Request attended: "/project/edit/:id"');
 };
 
@@ -96,5 +96,5 @@ export default {
   add,
   addPost,
   edit,
-  editPatch,
+  editPut,
 };
