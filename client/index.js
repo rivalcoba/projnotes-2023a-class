@@ -7,8 +7,15 @@ import 'materialize-css/dist/css/materialize.css';
 // Importando scripts de Materialize
 import 'materialize-css/dist/js/materialize';
 /* eslint-enable */
+// Script para borrar proyecto
+import deleteProject from './domains/project.dashboard';
 
 // Inicializando Scripts de Materialize para interactividad
 M.AutoInit();
 
-console.log('Webpack Working Middleware!!! 📦');
+// Cargando script en caso de que la URL sea '/project'
+if (window.location.pathname === '/project') {
+  window.deleteProject = deleteProject;
+}
+
+console.log('Webpack Working Middlewaree!!! 📦');
