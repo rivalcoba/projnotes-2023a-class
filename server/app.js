@@ -18,10 +18,14 @@ import configTemplateEngine from '@server/config/templateEngine';
 import webpack from 'webpack';
 import WebpackDevMiddleware from 'webpack-dev-middleware';
 import WebpackHotMiddleware from 'webpack-hot-middleware';
+
 // Importing webpack configuration
 import webpackConfig from '../webpack.dev.config';
 
-// Impornting winston logger
+// Importando configurador de sesiones
+import configSession from './config/configSessions';
+
+// Importing winston logger
 import log from './config/winston';
 
 // Importando enrutador
@@ -81,12 +85,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 // Enable post and delete verbs
 app.use(methodOverride('_method'));
+// Habilitando manejo de sesiones y mensajes flash
+configSession(app);
 // Set up the static file server
 app.use(express.static(path.join(__dirname, '../public')));
-
 // Registering routes
 router.addRoutes(app);
-
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
   log.info(`404 Pagina no encontrada ${req.method} ${req.originalUrl}`);
